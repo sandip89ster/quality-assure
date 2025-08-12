@@ -10,11 +10,49 @@
     />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#0b0d12" />
+
+    <!-- Canonical & Icons -->
+    <link rel="canonical" href="https://your-domain/" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Social / Open Graph -->
+    <meta property="og:title" content="CodeQore — Software Testing Services" />
+    <meta
+      property="og:description"
+      content="Manual & Automation for Web, API, Mobile + Load/Performance."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CodeQore",
+        "url": "https://your-domain/",
+        "logo": "https://your-domain/icon.png",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "codecoregmbh@gmail.com",
+            "availableLanguage": ["en", "de"]
+          }
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
     <style>
       :root {
         --bg: #0b0d12;
@@ -69,6 +107,8 @@
         margin: 0 auto;
         padding: 0 24px;
       }
+
+      /* Buttons */
       .btn {
         display: inline-flex;
         align-items: center;
@@ -94,6 +134,7 @@
         box-shadow: none;
       }
 
+      /* Header */
       header {
         position: sticky;
         top: 0;
@@ -181,6 +222,7 @@
         }
       }
 
+      /* Hero */
       .hero {
         padding: 96px 0 56px;
       }
@@ -232,14 +274,8 @@
         margin-top: 22px;
         flex-wrap: wrap;
       }
-      .meta {
-        display: flex;
-        gap: 22px;
-        flex-wrap: wrap;
-        margin-top: 20px;
-        color: var(--muted);
-        font-size: 0.92rem;
-      }
+
+      /* KPI cards */
       .kpis {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -255,6 +291,8 @@
       .kpi b {
         font-size: 1.3rem;
       }
+
+      /* Capabilities */
       .strip {
         display: flex;
         gap: 12px;
@@ -268,7 +306,7 @@
         font-weight: 600;
         font-size: 0.9rem;
       }
-      .hero-card,
+
       .hero-art {
         background: linear-gradient(
             180deg,
@@ -287,27 +325,8 @@
         height: auto;
         border-radius: 12px;
       }
-      .hero-svg {
-        display: block;
-      }
-      .hero-svg.mobile {
-        display: none;
-      }
-      @media (max-width: 900px) {
-        .hero-inner {
-          grid-template-columns: 1fr;
-        }
-        .kpis {
-          grid-template-columns: 1fr;
-        }
-        .hero-svg.desktop {
-          display: none;
-        }
-        .hero-svg.mobile {
-          display: block;
-        }
-      }
 
+      /* Sections */
       section {
         padding: 70px 0;
       }
@@ -320,6 +339,7 @@
         color: var(--muted);
         max-width: 70ch;
       }
+
       .grid {
         display: grid;
         gap: 18px;
@@ -336,10 +356,17 @@
         }
       }
       @media (max-width: 860px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+        }
         .cards-3 {
           grid-template-columns: 1fr;
         }
+        .kpis {
+          grid-template-columns: 1fr;
+        }
       }
+
       .card {
         background: var(--panel);
         border: 1px solid rgba(255, 255, 255, 0.08);
@@ -368,6 +395,7 @@
         );
         border: 1px solid rgba(255, 255, 255, 0.1);
       }
+
       .list {
         list-style: none;
         padding: 0;
@@ -389,6 +417,7 @@
         margin-top: 0.45rem;
         box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.15);
       }
+
       .split {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -399,6 +428,7 @@
           grid-template-columns: 1fr;
         }
       }
+
       .faq details {
         background: var(--panel);
         border: 1px solid rgba(255, 255, 255, 0.08);
@@ -412,6 +442,7 @@
       .faq details + details {
         margin-top: 10px;
       }
+
       .footer {
         padding: 26px 0;
         color: var(--muted);
@@ -421,6 +452,18 @@
         margin-bottom: 5px;
         margin-right: 5px;
       }
+
+      /* Form fields */
+      .field {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: var(--elev);
+        color: var(--text);
+        margin-bottom: 10px;
+      }
+
       .sr-only {
         position: absolute !important;
         height: 1px;
@@ -436,12 +479,14 @@
     </style>
   </head>
   <body>
+    <!-- Header -->
     <header>
       <div class="container nav" id="nav">
-        <a class="brand" href="#top" aria-current="page"
-          ><span class="brand-mark" aria-hidden="true">CQ</span
-          ><span>CodeQore</span></a
-        >
+        <a class="brand" href="#top" aria-current="page">
+          <span class="brand-mark" aria-hidden="true">CQ</span>
+          <span>CodeQore</span>
+        </a>
+
         <nav aria-label="Primary">
           <ul>
             <li><a href="#services">Services</a></li>
@@ -450,6 +495,7 @@
             <li><a href="#faq">FAQ</a></li>
           </ul>
         </nav>
+
         <div class="nav-cta">
           <a
             class="btn secondary"
@@ -464,6 +510,7 @@
       </div>
     </header>
 
+    <!-- Hero -->
     <main id="top">
       <section class="hero">
         <div class="container hero-inner">
@@ -503,6 +550,8 @@
               >
               <a class="btn secondary" href="#services">Explore services</a>
             </div>
+
+            <!-- Old-style cards replacing badges: SDET-led / ISTQB / CI/CD -->
             <div class="grid cards-3" role="list" style="margin-top: 18px">
               <article class="card" role="listitem">
                 <div class="icon" aria-hidden="true">👨‍💻</div>
@@ -517,18 +566,22 @@
                 <h3>CI/CD Friendly</h3>
               </article>
             </div>
+
+            <!-- Capabilities strip -->
             <div class="strip" aria-label="Capabilities">
-              <span class="pill">Functional</span
-              ><span class="pill">Regression</span
-              ><span class="pill">Smoke</span><span class="pill">E2E</span
-              ><span class="pill">API</span><span class="pill">Load</span
-              ><span class="pill">Mobile</span>
+              <span class="pill">Functional</span>
+              <span class="pill">Regression</span>
+              <span class="pill">Smoke</span>
+              <span class="pill">E2E</span>
+              <span class="pill">API</span>
+              <span class="pill">Load</span>
+              <span class="pill">Mobile</span>
             </div>
           </div>
+
+          <!-- HERO ART: Single responsive SVG (no duplicate mobile SVG) -->
           <aside class="hero-art" aria-label="Quality dashboard visual">
-            <!-- Desktop SVG -->
             <svg
-              class="hero-svg desktop"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1200 720"
               role="img"
@@ -544,6 +597,7 @@
                   <stop offset="100%" stop-color="#5df6e6" />
                 </linearGradient>
               </defs>
+              <!-- Frame -->
               <rect
                 x="60"
                 y="60"
@@ -563,6 +617,7 @@
                 fill="rgba(255,255,255,.04)"
                 stroke="rgba(255,255,255,.12)"
               />
+              <!-- Header bar -->
               <rect
                 x="90"
                 y="110"
@@ -583,6 +638,7 @@
                 fill="#fff"
                 opacity=".22"
               />
+              <!-- KPI blocks (in image) -->
               <rect
                 x="110"
                 y="190"
@@ -678,6 +734,7 @@
               >
                 &lt; 7 days
               </text>
+              <!-- Chart area -->
               <rect
                 x="460"
                 y="190"
@@ -693,6 +750,7 @@
                 <line x1="500" y1="460" x2="1040" y2="460" />
                 <line x1="500" y1="530" x2="1040" y2="530" />
               </g>
+              <!-- Bars -->
               <rect
                 x="520"
                 y="500"
@@ -744,6 +802,7 @@
                 fill="url(#barGrad)"
                 opacity=".95"
               />
+              <!-- Line -->
               <path
                 d="M520 470 C580 430 640 450 700 395 C760 350 820 360 880 330"
                 fill="none"
@@ -753,6 +812,7 @@
               <circle cx="520" cy="470" r="5" fill="#00c2a8" />
               <circle cx="700" cy="395" r="5" fill="#00c2a8" />
               <circle cx="880" cy="330" r="5" fill="#00c2a8" />
+              <!-- Legend -->
               <rect
                 x="500"
                 y="210"
@@ -792,175 +852,11 @@
                 Performance Trend
               </text>
             </svg>
-            <!-- Mobile SVG -->
-            <svg
-              class="hero-svg mobile"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 700 900"
-              role="img"
-              aria-label="Mobile testing dashboard with KPIs and chart"
-            >
-              <defs>
-                <linearGradient id="mBar" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#5d74ff" />
-                  <stop offset="100%" stop-color="#9b5cf6" />
-                </linearGradient>
-                <linearGradient id="mLine" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#00c2a8" />
-                  <stop offset="100%" stop-color="#5df6e6" />
-                </linearGradient>
-              </defs>
-              <rect
-                x="30"
-                y="40"
-                width="640"
-                height="820"
-                rx="24"
-                fill="#0f1422"
-                stroke="rgba(255,255,255,.12)"
-                stroke-width="2"
-              />
-              <rect
-                x="60"
-                y="80"
-                width="580"
-                height="220"
-                rx="16"
-                fill="rgba(255,255,255,.06)"
-              />
-              <text
-                x="80"
-                y="130"
-                fill="#a7afc2"
-                font-size="22"
-                font-family="Inter,system-ui,sans-serif"
-              >
-                Release Risk ↓
-              </text>
-              <text
-                x="80"
-                y="170"
-                fill="#e7e9ee"
-                font-size="34"
-                font-weight="700"
-                font-family="Inter,system-ui,sans-serif"
-              >
-                up to 70%
-              </text>
-              <text
-                x="80"
-                y="215"
-                fill="#a7afc2"
-                font-size="22"
-                font-family="Inter,system-ui,sans-serif"
-              >
-                Automation Coverage
-              </text>
-              <text
-                x="80"
-                y="255"
-                fill="#e7e9ee"
-                font-size="34"
-                font-weight="700"
-                font-family="Inter,system-ui,sans-serif"
-              >
-                85%+
-              </text>
-              <text
-                x="80"
-                y="300"
-                fill="#a7afc2"
-                font-size="22"
-                font-family="Inter,system-ui,sans-serif"
-              >
-                Avg. Setup Time
-              </text>
-              <text
-                x="80"
-                y="340"
-                fill="#e7e9ee"
-                font-size="34"
-                font-weight="700"
-                font-family="Inter,system-ui,sans-serif"
-              >
-                &lt; 7 days
-              </text>
-              <rect
-                x="60"
-                y="380"
-                width="580"
-                height="420"
-                rx="16"
-                fill="rgba(255,255,255,.06)"
-              />
-              <g opacity=".18" stroke="#e7e9ee">
-                <line x1="90" y1="450" x2="610" y2="450" />
-                <line x1="90" y1="510" x2="610" y2="510" />
-                <line x1="90" y1="570" x2="610" y2="570" />
-                <line x1="90" y1="630" x2="610" y2="630" />
-              </g>
-              <rect
-                x="120"
-                y="600"
-                width="40"
-                height="60"
-                rx="8"
-                fill="url(#mBar)"
-              />
-              <rect
-                x="190"
-                y="560"
-                width="40"
-                height="100"
-                rx="8"
-                fill="url(#mBar)"
-              />
-              <rect
-                x="260"
-                y="520"
-                width="40"
-                height="140"
-                rx="8"
-                fill="url(#mBar)"
-              />
-              <rect
-                x="330"
-                y="480"
-                width="40"
-                height="180"
-                rx="8"
-                fill="url(#mBar)"
-              />
-              <rect
-                x="400"
-                y="450"
-                width="40"
-                height="210"
-                rx="8"
-                fill="url(#mBar)"
-              />
-              <rect
-                x="470"
-                y="430"
-                width="40"
-                height="230"
-                rx="8"
-                fill="url(#mBar)"
-              />
-              <path
-                d="M120 560 C190 510 260 530 330 500 C400 470 470 480 540 460"
-                fill="none"
-                stroke="url(#mLine)"
-                stroke-width="6"
-              />
-              <circle cx="120" cy="560" r="5" fill="#00c2a8" />
-              <circle cx="330" cy="500" r="5" fill="#00c2a8" />
-              <circle cx="540" cy="460" r="5" fill="#00c2a8" />
-            </svg>
           </aside>
         </div>
       </section>
 
+      <!-- Services -->
       <section id="services">
         <div class="container">
           <h2 class="section-title">Services</h2>
@@ -1022,7 +918,7 @@
         </div>
       </section>
 
-      <!-- TECH STACK — old-card style (no copy changes to tool names) -->
+      <!-- Tech Stack (old card style) -->
       <section id="tech">
         <div class="container">
           <h2 class="section-title">Tech Stack</h2>
@@ -1083,6 +979,7 @@
         </div>
       </section>
 
+      <!-- Process -->
       <section id="process">
         <div class="container">
           <h2 class="section-title">How we work</h2>
@@ -1119,6 +1016,7 @@
         </div>
       </section>
 
+      <!-- FAQ -->
       <section id="faq">
         <div class="container">
           <h2 class="section-title">FAQ</h2>
@@ -1159,6 +1057,7 @@
         </div>
       </section>
 
+      <!-- Contact -->
       <section id="contact">
         <div class="container split">
           <div>
@@ -1172,7 +1071,8 @@
                 <strong>Email:</strong>
                 <a href="mailto:codecoregmbh@gmail.com"
                   >codecoregmbh@gmail.com</a
-                ><br /><strong>Hours:</strong> Mon–Fri, 9:00–18:00 (CET)
+                ><br />
+                <strong>Hours:</strong> Mon–Fri, 9:00–18:00 (CET)
               </p>
               <p class="muted">Prefer Calendly? Add your link here later.</p>
             </div>
@@ -1186,50 +1086,28 @@
             <input
               id="name"
               name="Name"
+              class="field"
               placeholder="Your name"
               required
-              style="
-                width: 100%;
-                padding: 12px 14px;
-                border-radius: 12px;
-                border: 1px solid rgba(255, 255, 255, 0.14);
-                background: var(--elev);
-                color: var(--text);
-                margin-bottom: 10px;
-              "
+              autocomplete="name"
             />
             <label class="sr-only" for="email">Email</label>
             <input
               id="email"
               name="Email"
+              class="field"
               type="email"
               placeholder="Work email"
               required
-              style="
-                width: 100%;
-                padding: 12px 14px;
-                border-radius: 12px;
-                border: 1px solid rgba(255, 255, 255, 0.14);
-                background: var(--elev);
-                color: var(--text);
-                margin-bottom: 10px;
-              "
+              autocomplete="email"
             />
             <label class="sr-only" for="msg">Message</label>
             <textarea
               id="msg"
               name="Message"
+              class="field"
               rows="5"
               placeholder="What can we help you test?"
-              style="
-                width: 100%;
-                padding: 12px 14px;
-                border-radius: 12px;
-                border: 1px solid rgba(255, 255, 255, 0.14);
-                background: var(--elev);
-                color: var(--text);
-                margin-bottom: 12px;
-              "
             ></textarea>
             <button class="btn" type="submit">Send inquiry</button>
             <p style="color: var(--muted); font-size: 0.9rem; margin: 10px 0 0">
@@ -1256,16 +1134,21 @@
           © <span id="year"></span> CodeQore. All rights reserved.
         </div>
         <div style="display: flex; gap: 14px">
-          <a href="#services">Services</a><a href="#process">Process</a
-          ><a href="#tech">Tech</a><a href="#faq">FAQ</a>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#tech">Tech</a>
+          <a href="#faq">FAQ</a>
         </div>
       </div>
     </footer>
 
     <script>
+      // Mobile nav toggle
       const nav = document.getElementById("nav");
       const btn = document.getElementById("menuBtn");
       btn?.addEventListener("click", () => nav.classList.toggle("open"));
+
+      // Smooth scroll for internal links
       document.querySelectorAll('a[href^="#"]').forEach((a) => {
         a.addEventListener("click", (e) => {
           const id = a.getAttribute("href");
@@ -1278,7 +1161,10 @@
           }
         });
       });
-      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Current year
+      const y = document.getElementById("year");
+      if (y) y.textContent = new Date().getFullYear();
     </script>
   </body>
 </html>
